@@ -1,0 +1,14 @@
+@import "reset";
+@import "mixins";
+@import "header";
+
+body {
+    box-sizing: border-box;
+}
+@import "nav";
+.wrapper {
+    margin:  5px 2vw;
+    @import "section";
+    @import "footer";   
+}
+

@@ -1,0 +1,17 @@
+.sections {
+    section {
+        img {
+            margin: 3px;
+            width: 23vw;
+            @include break(1030px) {
+                width: 22vw;    
+            }
+            @include break(600px) {
+                width: 45vw;    
+            }
+            @include break(480px) {
+                width: 90vw;    
+            }
+        }
+    }
+}

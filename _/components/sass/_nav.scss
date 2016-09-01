@@ -1,0 +1,32 @@
+nav {
+    background: #13005d;
+    a {
+        color: #fff;
+        text-decoration: none;
+        @include easeOut;
+        &:hover {
+            color: #ffffbf;
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            float: left;
+            padding: 0.5vw 2vw 0;
+            width: inherit;
+            @include break(460px) {
+                width: 40%;    
+            }
+            @include break(300px) {
+                width: 100%;    
+            }
+        }
+    }
+    &:after {
+        content: '';
+        clear: both;
+        display: block;
+    }
+}

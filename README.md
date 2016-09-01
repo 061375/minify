@@ -8,7 +8,7 @@ And, it would be nice to export the end result as minified HTML.
 So, I created a simple script that usig cURL grabs the HTML output, minifies it and creates a static HTML file.
 
 ##History
-I, for reasons I cannot remember, happened to look at the raw source code of the website https://www.netflix.com and noticed that all the whitespace, line breaks and comments had been stripped.
+I, for reasons I cannot remember, happened to look at the raw source code of the website www.netflix.com and noticed that all the whitespace, line breaks and comments had been stripped.
 It was minified...I thought. That's clever. Combine this with server-side compression and minified CSS and JS files and you will likely reduce dowload time by a signifigant factor.
 
 ##What Gets Minified
@@ -18,7 +18,18 @@ The script strips:
 - multiple spaces
 - HTML comments '<!-- content -->'
 
+Some have suggested that its not necessary to minify HTML if the page is using server-side compression (GZIP etc...)
+This is "mostly" true. The HTML is really not the large load when viewing a page. Images and media generally are and to a lesser degree
+stylesheets and scripts. And that the benefit isn't very great.
+
+BUT, when the PHP file (resulting HTML) is compressed the file size IS larger without minification because the tabs and line-breaks etc
+are characters that need to be compressed before downloading.
+
+So, one could make the argument that every little bit helps. Just like there is an advantage to minifying CSS and JS files.
+
 ##Other Workflow Suggestions
-Generally I like to use Grunt with SASS to create and compress my stylesheets and javascript files.
+Generally I like to use Grunt www.gruntjs.com with SASS www.sass-lang.com to create and compress my stylesheets and javascript files.
+
+
 
 
