@@ -57,8 +57,8 @@ $title = 'PHP Minify Example - By Jeremy Heminger';
         require_once('compress.php');
         $compress = new Compress(array(
             'filepath'=>$_SERVER['DOCUMENT_ROOT'].'/',
-            'workurl'=>'http://192.168.1.154/_/components/php/',
-            'devip'=>array('::1','192.168.1.157','192.168.1.154')
+            'workurl'=>'http://localhost/_/components/php/', /* this is the path to your website or localhost */
+            'devip'=>array('::1') /* this is a whitelist */
         ));
     ?>
     <?php include('_head.php'); ?>
