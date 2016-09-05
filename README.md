@@ -37,12 +37,13 @@ Its possible to have compress multiple files to produce a traditional HTML docum
 Simply add the following code to the head of any file in the working directory
 Name the file whatever you want (as long as it has a PHP extension)
 Navigate to the document in your browser and it will be added to the root with the file name.
+
 <?php
         require_once('compress.php');
         $compress = new Compress(array(
             'filepath'=>$_SERVER['DOCUMENT_ROOT'].'/',
-            'workurl'=>'http://192.168.1.154/_/components/php/', // this is the path to your website or localhost
-            'devip'=>array('::1','192.168.1.157','192.168.1.154') // this is a whitelist
+            'workurl'=>'http://192.168.1.154/_/components/php/', /* this is the path to your website or localhost */
+            'devip'=>array('::1','192.168.1.157','192.168.1.154') /* this is a whitelist */
         ));
 ?>
     
