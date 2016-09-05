@@ -27,6 +27,25 @@ are characters that need to be compressed before downloading.
 
 So, one could make the argument that every little bit helps. Just like there is an advantage to minifying CSS and JS files.
 
+##Usage
+In the subdirectory _/components/php find the working files 
+To compress the output HTML in your browser navigate to the working directory
+The program will output the compressed HTML to the root as index.html
+
+###Multiple Files
+Its possible to have compress multiple files to produce a traditional HTML document.
+Simply add the following code to the head of any file in the working directory
+Name the file whatever you want (as long as it has a PHP extension)
+Navigate to the document in your browser and it will be added to the root with the file name.
+<?php
+        require_once('compress.php');
+        $compress = new Compress(array(
+            'filepath'=>$_SERVER['DOCUMENT_ROOT'].'/',
+            'workurl'=>'http://192.168.1.154/_/components/php/', // this is the path to your website or localhost
+            'devip'=>array('::1','192.168.1.157','192.168.1.154') // this is a whitelist
+        ));
+?>
+    
 ##Other Workflow Suggestions
 Generally I like to use Grunt www.gruntjs.com with SASS www.sass-lang.com to create and compress my stylesheets and javascript files.
 
